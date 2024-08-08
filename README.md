@@ -18,4 +18,11 @@ In this section, you will write a Python script named changeImage.py to process 
 You will be using the PIL library to update all images within ~/supplier-data/images directory to the following specifications:
   - Size: Change image resolution from 3000x2000 to 600x400 pixel
   - Format : Change image format from .TIFF to .JPEG
-      - Note: The raw images from images subdirectory contains alpha transparency layers. So, it is better to first convert RGBA 4-channel format to RGB 3-channel format before processing the images. Use convert("RGB") method for converting RGBA to RGB image. 
+      - Note: The raw images from images subdirectory contains alpha transparency layers. So, it is better to first convert RGBA 4-channel format to RGB 3-channel format before processing the images. Use convert("RGB") method for converting RGBA to RGB image.
+
+# Uploading images to web server
+You have modified the fruit images through changeImage.py script. Now, you will have to upload these modified images to the web server that is handling the fruit catalog. To do that, you'll have to use the Python requests module to send the file contents to the [external-IP-address]/upload URL.
+
+Copy the external IP address of your instance from the Connection Details Panel on the right side and enter the IP address in a new web browser tab. This opens a web page displaying the text "Fruit Catalog".
+
+In the home directory, you'll have a script named example_upload.py to upload images to the running fruit catalog web server. To view the example_upload.py script use the cat command.

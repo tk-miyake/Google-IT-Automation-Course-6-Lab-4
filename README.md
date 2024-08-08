@@ -26,3 +26,10 @@ You have modified the fruit images through changeImage.py script. Now, you will 
 Copy the external IP address of your instance from the Connection Details Panel on the right side and enter the IP address in a new web browser tab. This opens a web page displaying the text "Fruit Catalog".
 
 In the home directory, you'll have a script named example_upload.py to upload images to the running fruit catalog web server. To view the example_upload.py script use the cat command.
+
+# Uploading the descriptions
+The Django server is already set up to show the fruit catalog for your company. You can visit the main website by entering external-IP-address in the URL bar or by removing /media/images from the existing URL opened earlier. 
+
+To add fruit images and their descriptions from the supplier on the fruit catalog web-server, create a new Python script that will automatically POST the fruit images and their respective description in JSON format.
+
+Write a Python script named run.py to process the text files (001.txt, 003.txt ...) from the supplier-data/descriptions directory. The script should turn the data into a JSON dictionary by adding all the required fields, including the image associated with the fruit (image_name), and uploading it to http://[external-IP-address]/fruits using the Python requests library.

@@ -5,7 +5,7 @@ import requests
 
 
 src_dir = "/home/student/supplier-data/descriptions/"
-url = "http://35.185.73.219/fruits/"
+url = "http://[external-IP-address]/fruits/"
 
 for files in os.listdir(src_dir):
     with open(src_dir + files, "r") as file:

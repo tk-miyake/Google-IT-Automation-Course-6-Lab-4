@@ -4,9 +4,6 @@
 import requests
 import os
 
-# This example shows how a file can be uploaded using
-# The Python Requests module
-
 url = "http://localhost/upload/"
 img_dir = "/home/student/supplier-data/images/"
 

@@ -4,42 +4,17 @@ import os
 import requests
 
 
-# txt_dir = "/home/student/supplier-data/descriptions/"
-# img_dir = "/home/student/supplier-data/images/"
+src_dir = "/home/student/supplier-data/descriptions/"
+url = "http://35.185.73.219/fruits/"
 
-# for files in os.listdir(txt_dir):
-#     with open(txt_dir + files, "r") as file:
-#         lines = [line.strip() for line in file.readlines()]
+for files in os.listdir(src_dir):
+    with open(src_dir + files, "r") as file:
+        lines = file.readlines()
+        name = lines[0].strip()
+        weight = int(lines[1].strip().replace(" lbs", ""))
+        description = lines[2].strip()
+        image_name = files.split(".")[0] + ".jpeg"
+        data = {"name": name, "weight": weight, "description": description, "image_name": image_name}
 
-#     key_lists = ["name", "weight", "description"]
-#     dictionary = dict(zip(key_lists, lines))
-    
-#     for dicts in dictionary:
-#         for keys in dicts:
-#             dicts[keys] = int(dicts[keys])
-
-#     response = requests.post("http://[external-IP-address]/fruits", data=description_data)
-#     print("status_code", response.status_code)
-
-
-txt_dir = "C:\\Users\\WS-ENG-MIYAKE\\txt\\"
-# img_dir = "C:\\Users\\WS-ENG-MIYAKE\\"
-
-for files in os.listdir(txt_dir):
-    with open(txt_dir + files, "r") as file:
-        lines = [line.strip() for line in file.readlines()]
-        print(lines)
-
-
-
-
-    # key_lists = ["name", "weight", "description"]
-    # dictionary = dict(zip(key_lists, lines))
-    # print(dictionary)
-    
-    # for dicts in dictionary:
-        
-    
-    # for dicts in dictionary:
-    #     for keys in dicts:
-    #         dicts[keys] = int(dicts[keys])
+    response = requests.post(url, data=data)
+    print("status_code", response.status_code)

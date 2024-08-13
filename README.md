@@ -100,4 +100,40 @@ You will need to pass the following arguments to the reports.generate_report met
 
 Once you have completed the report_email.py script. Save the file by typing Ctrl+o, Enter key, and Ctrl+x.
 
+Send report through email
+Once the PDF is generated, you need to send the email using the emails.generate_email() and emails.send_email() methods.
 
+Define generate_email and send_email methods by importing necessary libraries.
+Once you define the generate_email and send_email methods, call the methods under the main method after creating the PDF report:
+
+Use the following details to pass the parameters to emails.generate_email():
+  - From: automation@example.com
+  - To: student@example.com
+  - Subject line: Upload Completed - Online Fruit Store
+  - E-mail Body: All fruits are uploaded to our website successfully. A detailed list is attached to this email.
+  - Attachment: Attach the path to the file processed.pdf
+
+Once you have finished editing the report_email.py script, save the file by typing Ctrl+o, Enter key, and Ctrl+x.
+
+Now, check the webmail by visiting [external-IP-address]/webmail. Here, you'll need a login to roundcube using the student as username and password for the password, followed by clicking Login.
+
+Now you should be able to see your inbox, with one unread email. Open the mail by double clicking on it. There should be a report in PDF format attached to the mail. View the report by opening it.
+
+# Health check
+This is the last part of the lab, where you will have to write a Python script named health_check.py that will run in the background monitoring some of your system statistics: CPU usage, disk space, available memory and name resolution. Moreover, this Python script should send an email if there are problems, such as:
+
+  - Report an error if CPU usage is over 80%
+  - Report an error if available disk space is lower than 20%
+  - Report an error if available memory is less than 100MB
+  - Report an error if the hostname "localhost" cannot be resolved to "127.0.0.1"
+
+Import the necessary Python libraries (eg. shutil, psutil) to write this script.
+
+Complete the script to check the system statistics every 60 seconds, and in event of any issues detected among the ones mentioned above, an email should be sent with the following content:
+
+From: automation@example.com
+To: student@example.com
+Subject line:
+E-mail Body: Please check your system and resolve the issue as soon as possible.
+
+Note: There is no attachment file here, so you must be careful while defining the generate_email() method in the emails.py script or you can create a separate generate_error_report() method for handling non-attachment email.

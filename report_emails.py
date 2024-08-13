@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 
 import os
-import requests
 import datetime
 import reports
 import emails
@@ -21,7 +20,7 @@ def process_data (directory):
 if __name__ == "__main__":
     attachment = "/tmp/processed.pdf"
     title = "Processed Update on {}".format(datetime.datetime.today().date())
-    paragraph = process_data("supplier-data/descriptions")
+    paragraph = process_data("/home/student/supplier-data/descriptions/")
     reports.generate_report(attachment, title, paragraph)
 
     sender = "automation@example.com"
